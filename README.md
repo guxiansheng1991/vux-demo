@@ -1,2 +1,0 @@
-# vux-demo
-vux demo
