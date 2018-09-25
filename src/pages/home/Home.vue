@@ -1,5 +1,6 @@
 <template>
   <div>
+    <x-header title="use prop:title"></x-header>
     <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
     <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
     <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>

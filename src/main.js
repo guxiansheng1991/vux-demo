@@ -5,7 +5,14 @@ import FastClick from 'fastclick'
 import router from './router/index'
 import store from './store/index'
 import App from './App'
-import { AjaxPlugin } from 'vux'
+import {AjaxPlugin, XHeader} from 'vux'
+
+// Vue.use(ConfigPlugin, {
+//   $layout: 'VIEW_BOX'
+// });
+
+// 全局组件引入
+Vue.component('x-header', XHeader);
 
 FastClick.attach(document.body)
 
