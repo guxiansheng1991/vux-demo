@@ -34,21 +34,15 @@ export default {
   data () {
     return {}
   },
+  props: {
+  },
   components: {
     Tabbar, TabbarItem
   },
-  mounted () {
-    console.log(1);
-  },
-  beforeUpdate () {
-    console.log(2);
-  },
-  beforeDestroy () {
-    console.log(3);
-  },
+  mounted () {},
   methods: {
     handleIndexChange (to, from) {
-      switch(to) {
+      switch (to) {
         case 0 :
           this.$router.push({name: 'Home'});
           break;
@@ -72,6 +66,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
 .my-tabber-wrapper{
   width: 100%;
   height: auto;

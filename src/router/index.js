@@ -5,6 +5,7 @@ import Home from '@/pages/home/Home';
 import Brand from '@/pages/brand/Brand';
 import Shoppingcart from '@/pages/shoppingcart/Shoppingcart';
 import Mine from '@/pages/mine/Mine';
+import ProductDetail from '@/pages/product/ProductDetail.vue';
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/Mine',
       name: 'Mine',
       component: Mine
+    },
+    {
+      path: '/ProductDetail',
+      name: 'ProductDetail',
+      component: ProductDetail
     }
   ]
 })

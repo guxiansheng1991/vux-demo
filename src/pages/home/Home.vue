@@ -1,20 +1,35 @@
 <template>
   <div>
-    home
-    <my-tabbar></my-tabbar>
+    <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
+    <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
+    <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
+    <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
+    <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
+    <h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1><h1>home</h1>
+    <button @click="test">跳转</button>
   </div>
 </template>
 
 <script>
-import MyTabbar from '../../components/common/MyTabbar';
+import {mapGetters, mapMutations} from 'vuex';
 
 export default {
   name: 'home',
   data () {
     return {}
   },
-  components: {
-    MyTabbar
+  computed: {
+    ...mapGetters(['showTabbar'])
+  },
+  created () {
+    console.log(this.showTabbar);
+    this.updateShowTabbar(true);
+  },
+  methods: {
+    ...mapMutations(['updateShowTabbar']),
+    test () {
+      this.$router.push({name: 'ProductDetail'});
+    }
   }
 }
 </script>

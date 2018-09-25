@@ -1,20 +1,26 @@
 <template>
   <div>
     shoppingcart
-    <my-tabbar></my-tabbar>
   </div>
 </template>
 
 <script>
-import MyTabbar from '../../components/common/MyTabbar';
+import {mapGetters, mapMutations} from 'vuex';
 
 export default {
   name: 'shoppingcart',
   data () {
     return {}
   },
-  components: {
-    MyTabbar
+  computed: {
+    ...mapGetters(['showTabbar'])
+  },
+  created () {
+    console.log(this.showTabbar);
+    this.updateShowTabbar(true);
+  },
+  methods: {
+    ...mapMutations(['updateShowTabbar'])
   }
 }
 </script>
