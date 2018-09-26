@@ -1,6 +1,6 @@
 <template>
   <div>
-    <my-scroll height="500">
+    <my-scroll :height="500" v-on:down="pullingDown" v-on:up="pullingUp">
       <div>
         <h1>哈哈哈哈</h1><h1>哈哈哈哈</h1><h1>哈哈哈哈</h1><h1>哈哈哈哈</h1>
         <h1>哈哈哈哈</h1><h1>哈哈哈哈</h1><h1>哈哈哈哈</h1><h1>哈哈哈哈</h1>
@@ -41,7 +41,18 @@ export default {
     this.updateShowTabbar(true);
   },
   methods: {
-    ...mapMutations(['updateShowTabbar'])
+    ...mapMutations(['updateShowTabbar']),
+    pullingDown (finish) {
+      window.setTimeout(() => {
+        finish();
+      }, 2000);
+    },
+    pullingUp (finish) {
+      window.setTimeout(() => {
+        // 可以传入true/false, 传入true代表已经加载完毕全部数据
+        finish();
+      }, 2000);
+    }
   }
 }
 </script>
