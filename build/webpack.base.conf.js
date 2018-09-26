@@ -74,7 +74,11 @@ let webpackConfig = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+      {
+        test: /\.(yaml|yml)$/,
+        loader: 'js-yaml-loader'
+      },
     ]
   }
 }
@@ -99,6 +103,13 @@ module.exports = vuxLoader.merge(webpackConfig, {
           }
         }
       }
+    },
+    {
+      name: 'i18n',
+      vuxStaticReplace: true,
+      staticReplace: true,
+      extractToFiles: 'src/locales/components.yml',
+      localeList: ['en', 'zh-CN','tw']
     }
   ]
 })

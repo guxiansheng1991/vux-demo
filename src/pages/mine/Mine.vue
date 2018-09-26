@@ -1,6 +1,8 @@
 <template>
   <div>
     mine
+    <button>中文</button>
+    <button>英文</button>
   </div>
 </template>
 
@@ -16,7 +18,6 @@ export default {
     ...mapGetters(['showTabbar'])
   },
   created () {
-    console.log(this.showTabbar);
     this.updateShowTabbar(true);
   },
   methods: {
