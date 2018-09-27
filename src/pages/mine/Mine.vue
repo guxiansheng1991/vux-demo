@@ -1,34 +1,42 @@
-<i18n>
-  hello:
-    en: hello vue
-    zh-CN: 你好Vue
-    tw: 你號Vue
-</i18n>
 <template>
   <div>
     mine
-    <h2>{{$t('hello')}}</h2>
-    <button>中文</button>
-    <button>英文</button>
+    {{ $t("message.test") }}
+    <button @click="changeZh">中文</button>
+    <button @click="changeEn">英文</button>
+    <alert v-model="show2" :button-text="$t('vux.vux_alert_button_text')" :title="$t('message.test')" :content="$t('common.test')"></alert>
   </div>
 </template>
 
 <script>
 import {mapGetters, mapMutations} from 'vuex';
+import { Alert } from 'vux'
 
 export default {
   name: 'mine',
   data () {
-    return {}
+    return {
+      show2: true
+    }
   },
   computed: {
     ...mapGetters(['showTabbar'])
+  },
+  components: {
+    Alert
   },
   created () {
     this.updateShowTabbar(true);
   },
   methods: {
-    ...mapMutations(['updateShowTabbar'])
+    ...mapMutations(['updateShowTabbar']),
+    changeZh () {
+      this.$i18n.locale = 'zh-CN';
+    },
+    changeEn () {
+      console.log(this.$i18n);
+      this.$i18n.locale = 'en';
+    }
   }
 }
 </script>
